@@ -26,7 +26,7 @@ namespace VirtualList
             .ObserveOn(SynchronizationContext.Current)
             .Subscribe(x => {
                             vScrollBar1.Maximum = x;                              // update the scrollbar
-                            //  vScrollBar1.Value = vScrollBar1.Maximum;            // auto-scroll the list
+                            vScrollBar1.Value = vScrollBar1.Maximum;              // auto-scroll the list
             });                                                   
 
             Observable.FromEventPattern<EventHandler, EventArgs>(h => vScrollBar1.ValueChanged += h,
